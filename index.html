@@ -1,62 +1,19 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Google</title>
-  <style>
-    /* スタイルの定義 */
-    body {
-      font-family: Arial, sans-serif;
-    }
-    #header {
-      padding: 20px;
-      background-color: #4285F4;
-      color: #fff;
-    }
-    #logo {
-      font-size: 36px;
-      font-weight: bold;
-      margin: 0;
-    }
-    #search-form {
-      margin-top: 30px;
-    }
-    #search-input {
-      width: 600px;
-      height: 40px;
-      padding: 10px;
-      font-size: 16px;
-      border: none;
-      border-radius: 5px;
-    }
-    #search-button {
-      width: 120px;
-      height: 40px;
-      margin-top: 5px;
-      margin-left: 5px;
-      font-size: 16px;
-      font-weight: bold;
-      background-color: #4285F4;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    /* 画像のスタイル */
-    #logo-img {
-      width: 272px;
-      height: 92px;
-    }
-  </style>
+  <title>My Search Engine</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
+
 <body>
-  <header id="header">
-    <h1 id="logo">
-      <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google" id="logo-img">
-    </h1>
-    <form id="search-form">
-      <input type="text" id="search-input" name="q" placeholder="Googleで検索">
-      <button type="submit" id="search-button">検索</button>
+  <div id="header">
+    <img id="logo-img" src="logo.png" alt="Google Logo">
+    <form id="search-form" action="https://www.google.com/search" method="get" target="_blank">
+      <input id="search-input" type="text" name="q" placeholder="検索キーワードを入力してください">
+      <button id="search-button" type="submit">検索</button>
     </form>
-  </header>
+  </div>
 </body>
+
 </html>

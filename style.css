@@ -1,0 +1,49 @@
+/* スタイルの定義 */
+body {
+  font-family: Arial, sans-serif;
+}
+
+#header {
+  padding: 20px;
+  background-color: #4285F4;
+  color: #fff;
+}
+
+#logo {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+}
+
+#search-form {
+  margin-top: 30px;
+}
+
+#search-input {
+  width: 600px;
+  height: 40px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+}
+
+#search-button {
+  width: 120px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #4285F4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* 画像のスタイル */
+#logo-img {
+  width: 272px;
+  height: 92px;
+}

@@ -43,5 +43,14 @@
     </form>
     <ul id="results" class="search-results"></ul>
     <script src="main.js"></script>
+    <script>
+        function search() {
+            // 検索ワードを取得
+            var query = document.getElementById("query").value;
+
+            // Googleにリダイレクト
+            window.location.href = "https://www.google.com/search?q=" + query;
+        }
+    </script>
 </body>
 </html>

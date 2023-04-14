@@ -1,49 +1,25 @@
-/* スタイルの定義 */
-body {
-  font-family: Arial, sans-serif;
-}
+/* styles.css */
 
-#header {
-  padding: 20px;
-  background-color: #4285F4;
-  color: #fff;
-}
-
-#logo {
-  font-size: 36px;
-  font-weight: bold;
+/* リセットCSS */
+body, figure, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, ol, li, pre, form, fieldset, blockquote, th, td, hr {
   margin: 0;
+  padding: 0;
 }
 
-#search-form {
-  margin-top: 30px;
-}
-
-#search-input {
-  width: 600px;
-  height: 40px;
-  padding: 10px;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-}
-
-#search-button {
-  width: 120px;
-  height: 40px;
-  margin-top: 5px;
-  margin-left: 5px;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: #4285F4;
+/* ヘッダー */
+header {
+  background-color: #4285f4;
   color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  padding: 20px;
 }
 
-/* 画像のスタイル */
-#logo-img {
-  width: 272px;
-  height: 92px;
+header h1 {
+  font-size: 28px;
 }
+
+nav ul {
+  list-style-type: none;
+}
+
+nav ul li {
+ 

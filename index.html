@@ -1,91 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Google風検索エンジン</title>
-  <style>
-    /* 検索フォームのスタイル */
-    #search-form {
-      text-align: center;
-    }
+    <title>Google風検索</title>
+    <style>
+        /* ページ全体のスタイル */
+        body {
+            background-color: #f8f8f8;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    #search-input {
-      width: 400px;
-      padding: 10px;
-      font-size: 18px;
-    }
+        /* 検索ボックスのスタイル */
+        .search-box {
+            margin: 150px auto;
+            max-width: 500px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
 
-    #search-button {
-      padding: 10px;
-      font-size: 18px;
-      margin-left: 10px;
-    }
+        /* ロゴのスタイル */
+        .logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
 
-    /* 検索結果のスタイル */
-    #search-results {
-      margin-top: 20px;
-    }
+        /* 入力ボックスのスタイル */
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+        }
 
-    .result-item {
-      margin-bottom: 10px;
-    }
+        /* 検索ボタンのスタイル */
+        .search-button {
+            display: block;
+            width: 100%;
+            margin-top: 10px;
+            padding: 10px;
+            font-size: 16px;
+            text-align: center;
+            background-color: #4285f4;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            border: none;
+        }
 
-    .result-title {
-      font-size: 16px;
-      font-weight: bold;
-    }
-
-    .result-url {
-      font-size: 14px;
-      color: blue;
-    }
-  </style>
+        /* フッターのスタイル */
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-  <!-- 検索フォームのHTML -->
-  <div id="search-form">
-    <input type="text" id="search-input" placeholder="検索キーワードを入力してください">
-    <button id="search-button">検索</button>
-  </div>
-  <!-- 検索結果の表示領域のHTML -->
-  <div id="search-results"></div>
-
-  <script>
-    // APIキーと検索エンジンIDの設定
-    const apiKey = "YOUR_API_KEY";
-    const cx = "YOUR_SEARCH_ENGINE_ID";
-
-    // 検索結果を表示する関数
-    function showResults(results) {
-      const resultsContainer = document.getElementById("search-results");
-      resultsContainer.innerHTML = ""; // 検索結果の表示をリセット
-
-      if (results.length > 0) {
-        results.forEach(result => {
-          // 検索結果のタイトルとURLを表示
-          const item = document.createElement("div");
-          item.className = "result-item";
-          const title = document.createElement("div");
-          title.className = "result-title";
-          title.textContent = result.title;
-          const url = document.createElement("a");
-          url.className = "result-url";
-          url.href = result.link;
-          url.textContent = result.link;
-          item.appendChild(title);
-          item.appendChild(url);
-          resultsContainer.appendChild(item);
-        });
-      } else {
-        // 検索結果がない場合にはメッセージを表示
-        const message = document.createElement("div");
-        message.textContent = "検索結果がありません。";
-        resultsContainer.appendChild(message);
-      }
-    }
-
-    // 検索ボタンのクリックイベントハンドラ
-    document.getElementById("search-button").addEventListener("click", async () => {
-      const query = document.getElementById("search-input").value;
-      if (query) {
-        // 検索クエリを使ってAPIを呼び出し、結果を表示
-        const response = await fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${cx
+    <div class="search-box">
+        <div class="logo">
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
+        </div>
+        <form action="https://www.google.com/search" method="get">
+            <input type="text" name="q" class="search-input" autofocus>
+            <button type="submit" class="search-button">Google 検索</button>
+        </form>
+    </div>
+    <div class="footer">
+        <p>Googleは米国などで登録された商標です。</p>
+    </div>
+</body>
+</html>

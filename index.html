@@ -64,11 +64,12 @@
         </div>
         <form action="https://www.google.com/search" method="get">
             <input type="text" name="q" class="search-input" autofocus>
-            <button type="submit" class="search-button">Google 検索</button>
+            <!-- 修正点: 検索ボタンを単なるボタンに変更 -->
+            <button type="button" class="search-button" onclick="searchGoogle()">Google 検索</button>
         </form>
     </div>
     <div class="footer">
         <p>Googleは米国などで登録された商標です。</p>
     </div>
-</body>
-</html>
+    <script>
+        // 修正

@@ -3,7 +3,88 @@
 <head>
   <meta charset="UTF-8">
   <title>Google風ページ</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* スタイルを記述してください */
+    /* headerのスタイル */
+    header {
+      background-color: #f8f8f8;
+      height: 60px;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    #logo {
+      width: 100px;
+      height: 40px;
+      background-image: url(https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png);
+      background-size: cover;
+    }
+
+    #search-form {
+      display: flex;
+      flex-grow: 1;
+      border: 1px solid #d3d3d3;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    #search-input {
+      flex-grow: 1;
+      padding: 5px;
+      border: none;
+      outline: none;
+    }
+
+    #search-btn {
+      padding: 5px 10px;
+      background-color: #f8f8f8;
+      cursor: pointer;
+    }
+
+    #btns {
+      display: flex;
+    }
+
+    .btn {
+      padding: 5px 10px;
+      margin-left: 10px;
+      background-color: #f8f8f8;
+      border: 1px solid #d3d3d3;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    /* mainのスタイル */
+    main {
+      margin-top: 20px;
+    }
+
+    #search-results {
+      padding: 20px;
+    }
+
+    /* footerのスタイル */
+    footer {
+      background-color: #f8f8f8;
+      height: 40px;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #footer-left a,
+    #footer-right a {
+      margin-right: 10px;
+      color: #5f6368;
+      text-decoration: none;
+    }
+
+    #footer-right a {
+      margin-left: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -31,11 +112,4 @@
       <a href="#">Googleについて</a>
     </div>
     <div id="footer-right">
-      <a href="#">プライバシー</a>
-      <a href="#">利用規約</a>
-      <a href="#">設定</a>
-    </div>
-  </footer>
-  <script src="script.js"></script>
-</body>
-</html>
+      <a href

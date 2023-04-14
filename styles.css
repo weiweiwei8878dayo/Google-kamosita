@@ -1,25 +1,39 @@
-/* styles.css */
-
-/* リセットCSS */
-body, figure, h1, h2, h3, h4, h5, h6, p, dl, dt, dd, ul, ol, li, pre, form, fieldset, blockquote, th, td, hr {
-  margin: 0;
-  padding: 0;
+body {
+  font-family: Arial, sans-serif;
 }
 
-/* ヘッダー */
 header {
-  background-color: #4285f4;
-  color: #fff;
+  background-color: #f8f8f8;
+  padding: 10px;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
   padding: 20px;
 }
 
-header h1 {
-  font-size: 28px;
+form {
+  display: flex;
 }
 
-nav ul {
-  list-style-type: none;
+#search-input {
+  flex-grow: 1;
+  padding: 10px;
+  font-size: 18px;
 }
 
-nav ul li {
- 
+input[type="submit"] {
+  padding: 10px;
+  font-size: 18px;
+  background-color: #4285F4;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
+
+input[type="submit"]:hover {
+  background-color: #3367D6;
+}

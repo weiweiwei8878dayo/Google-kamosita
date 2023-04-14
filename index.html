@@ -21,11 +21,20 @@
         document.body.style.backgroundImage = `url(${imageUrl})`; // 入力されたURLを背景画像に設定する
       }
     }
+
+    function search() {
+      // 検索処理を実装する
+      const searchQuery = document.getElementById('search-query').value;
+      // ここに検索処理を実装する
+      alert(`検索クエリ: ${searchQuery}`);
+    }
   </script>
 </head>
 <body>
   <h1>ChatGPT-Like Search</h1>
-  <!-- 検索フォームや検索結果表示などのコンテンツをここに追加 -->
+  <input type="text" id="search-query" placeholder="検索キーワードを入力してください">
+  <button onclick="search()">Search</button>
+  <!-- 検索結果の表示などのコンテンツをここに追加 -->
   <button onclick="changeBackground()">Change Background</button> <!-- 背景を変更するボタンを追加 -->
 </body>
 </html>

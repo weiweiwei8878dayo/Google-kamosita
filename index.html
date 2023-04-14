@@ -2,6 +2,35 @@
 <html>
 <head>
   <title>Google-Like Search</title>
+  <style>
+    /* CSS */
+    body {
+      background-color: #f2f2f2;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-top: 100px;
+    }
+    .google-logo {
+      margin-top: 50px;
+    }
+    .google-logo img {
+      max-width: 200px;
+    }
+    .search-container {
+      margin-top: 50px;
+    }
+    #search-input {
+      padding: 10px;
+      width: 400px;
+      font-size: 18px;
+    }
+    #search-button {
+      padding: 10px;
+      font-size: 18px;
+    }
+  </style>
   <script>
     // JavaScript
     function redirectToGoogle() {
@@ -13,7 +42,12 @@
 </head>
 <body>
   <h1>Google-Like Search</h1>
-  <input type="text" id="search-input" placeholder="Search...">
-  <button onclick="redirectToGoogle()">Search</button>
+  <div class="google-logo">
+    <img src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png" alt="Google Logo">
+  </div>
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button id="search-button" onclick="redirectToGoogle()">Search</button>
+  </div>
 </body>
 </html>

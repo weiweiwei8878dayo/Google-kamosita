@@ -42,7 +42,7 @@
 
     // ブックマークボタンのクリック時の処理を定義
     function bookmarkResult(resultId) {
-      var result = document.querySelector('.search-result:nth-child(' + resultId + ')');
+      var result = document.querySelectorAll('.search-result')[resultId - 1];
       var bookmarkButton = result.querySelector('button');
       bookmarkButton.disabled = true; // ボタンを無効化
       bookmarkButton.textContent = 'ブックマーク済み'; // ボタンのテキストを変更
@@ -63,4 +63,3 @@
   </script>
 </body>
 </html>
-``

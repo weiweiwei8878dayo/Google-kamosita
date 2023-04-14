@@ -1,78 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Google風検索</title>
-    <style>
-        /* ページ全体のスタイル */
-        body {
-            background-color: #f8f8f8;
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        /* 検索ボックスのスタイル */
-        .search-box {
-            margin: 150px auto;
-            max-width: 500px;
-            padding: 20px;
-            background-color: #fff;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* ロゴのスタイル */
-        .logo {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        /* 入力ボックスのスタイル */
-        .search-input {
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            border: none;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        /* 検索ボタンのスタイル */
-        .search-button {
-            display: block;
-            width: 100%;
-            margin-top: 10px;
-            padding: 10px;
-            font-size: 16px;
-            text-align: center;
-            background-color: #4285f4;
-            color: #fff;
-            text-decoration: none;
-            cursor: pointer;
-            border: none;
-        }
-
-        /* フッターのスタイル */
-        .footer {
-            margin-top: 50px;
-            text-align: center;
-        }
-    </style>
+  <title>Google風サイト</title>
+  <style>
+    /* CSSのスタイルはここに記述 */
+  </style>
 </head>
 <body>
+  <!-- ヘッダー部分のHTMLコード -->
+  <header>
+    <h1>Google風サイト</h1>
+    <!-- 検索ボックスのHTMLコード -->
     <div class="search-box">
-        <div class="logo">
-            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
-        </div>
-        <form action="https://www.google.com/search" method="get">
-            <input type="text" name="q" class="search-input" autofocus>
-            <button type="button" class="search-button" onclick="searchGoogle()">Google 検索</button>
-        </form>
+      <input type="text" class="search-input" placeholder="Googleで検索">
+      <button onclick="searchGoogle()">検索</button>
     </div>
-    <div class="footer">
-        <p>Googleは米国などで登録された商標です。</p>
+  </header>
+  
+  <!-- 検索結果の表示部分のHTMLコード -->
+  <div class="search-results">
+    <!-- 検索結果のHTMLコード -->
+    <div class="search-result">
+      <h3>検索結果1</h3>
+      <p>ここに検索結果の説明文が表示されます。</p>
+      <a href="https://www.example.com/search-result1">リンク先</a>
+      <button onclick="bookmarkResult(1)">ブックマークに追加</button>
     </div>
-    <script>
-        // 検索ボタンクリック時の処理を定義
-        function searchGoogle() {
-            var searchInput = document.querySelector('.search-input');
-            var query = searchInput.value.trim();
-            if (query !==
+    <!-- 検索結果のHTMLコード -->
+    <div class="search-result">
+      <h3>検索結果2</h3>
+      <p>ここに検索結果の説明文が表示されます。</p>
+      <a href="https://www.example.com/search-result2">リンク先</a>
+      <button onclick="bookmarkResult(2)">ブックマークに追加</button>
+    </div>
+    <!-- 他の検索結果を追加 -->
+  </div>
+
+  <script>
+    // ブックマークされた検索結果を管理する配列
+    var bookmarks = [];
+
+    // ブックマークボタンのクリック時の処理を定義
+    function bookmarkResult(resultId) {
+      var result = document.querySelector('.search-result:nth-child(' + resultId + ')');
+      var bookmarkButton = result.querySelector('button');
+      bookmarkButton.disabled = true; // ボタンを無効化
+      bookmarkButton.textContent = 'ブックマーク済み'; // ボタンのテキストを変更
+      bookmarks.push(resultId); // ブックマークされた結果を配列に追加
+    }
+
+    // ブックマークされた検索結果を表示する関数
+    function showBookmarks() {
+      // bookmarks 配列に格納された結果を利用して、ブックマークされた結果を表示する処理を記述
+    }
+  </script>
+</body>
+</html>

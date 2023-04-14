@@ -2,73 +2,18 @@
 <html>
 <head>
   <title>Google-Like Search</title>
-  <style>
-    /* CSS スタイル */
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .container {
-      margin: 0 auto;
-      max-width: 600px;
-      padding: 20px;
-    }
-    #search-input {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-    }
-    #search-results {
-      margin-top: 20px;
-    }
-    .search-result {
-      margin-bottom: 10px;
-    }
-    .search-result a {
-      color: #1a0dab;
-      text-decoration: none;
-    }
-    .search-result a:hover {
-      text-decoration: underline;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Google-Like Search</h1>
-    <input type="text" id="search-input" placeholder="Search...">
-    <div id="search-results"></div>
-  </div>
-  
   <script>
     // JavaScript
-    const searchInput = document.getElementById('search-input');
-    const searchResults = document.getElementById('search-results');
-
-    // ダミーデータ
-    const data = [
-      { title: 'Google', url: 'https://www.google.com/' },
-      { title: 'GitHub', url: 'https://github.com/' },
-      { title: 'OpenAI', url: 'https://www.openai.com/' },
-      { title: 'Wikipedia', url: 'https://www.wikipedia.org/' },
-      { title: 'Stack Overflow', url: 'https://stackoverflow.com/' }
-    ];
-
-    // 検索処理
-    searchInput.addEventListener('input', function(event) {
-      const query = event.target.value.toLowerCase();
-      const searchResultsHTML = data.reduce(function(acc, item) {
-        if (item.title.toLowerCase().includes(query)) {
-          return acc + `
-            <div class="search-result">
-              <a href="${item.url}" target="_blank">${item.title}</a>
-            </div>
-          `;
-        } else {
-          return acc;
-        }
-      }, '');
-      searchResults.innerHTML = searchResultsHTML;
-    });
+    function redirectToGoogle() {
+      const query = document.getElementById('search-input').value;
+      const googleSearchUrl = `https://www.google.com/search?q=${query}`;
+      window.location.href = googleSearchUrl;
+    }
   </script>
+</head>
+<body>
+  <h1>Google-Like Search</h1>
+  <input type="text" id="search-input" placeholder="Search...">
+  <button onclick="redirectToGoogle()">Search</button>
 </body>
 </html>

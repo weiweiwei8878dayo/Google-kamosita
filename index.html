@@ -1,2 +1,36 @@
-<input type="text" id="search-input" oninput="search()" placeholder="検索...">
-<ul id="search-results"></ul>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Search Engine</title>
+</head>
+<body>
+    <h1>Welcome to My Search Engine</h1>
+    <form onsubmit="return search()">
+        <input type="text" id="query" placeholder="Enter your search query">
+        <button type="submit">Search</button>
+    </form>
+    <ul id="results"></ul>
+
+    <script>
+        function search() {
+            var query = document.getElementById('query').value;
+            var results = document.getElementById('results');
+            results.innerHTML = '';
+
+            // Perform search logic here, e.g., fetch data from an API or search through pre-defined data
+
+            // Example of adding search results to the results list
+            var result1 = document.createElement('li');
+            result1.textContent = 'Search result 1';
+            results.appendChild(result1);
+
+            var result2 = document.createElement('li');
+            result2.textContent = 'Search result 2';
+            results.appendChild(result2);
+
+            // Return false to prevent form submission
+            return false;
+        }
+    </script>
+</body>
+</html>

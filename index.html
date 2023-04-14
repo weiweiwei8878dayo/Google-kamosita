@@ -6,12 +6,21 @@
         /* Googleロゴのスタイル */
         .google-logo {
             max-width: 200px;
+            margin: 0 auto; /* 中央に寄せる */
+        }
+
+        /* 検索フォームのスタイル */
+        #search-form {
+            text-align: center; /* 中央に寄せる */
+            margin-top: 20px; /* 上部に余白を設定 */
         }
 
         /* 検索結果のスタイル */
         .search-results {
             list-style-type: none;
             padding: 0;
+            text-align: left; /* 左寄せに設定 */
+            margin-top: 20px; /* 上部に余白を設定 */
         }
 
         .search-results li {
@@ -27,12 +36,12 @@
 <body>
     <!-- Googleロゴの表示 -->
     <img class="google-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Googleのロゴ">
-    <h1>検索サイト</h1>
+    <h1 style="text-align: center;">検索サイト</h1>
     <form id="search-form" onsubmit="search(); return false;">
         <input type="text" id="query" placeholder="キーワードを入力してください">
         <input type="submit" value="検索">
     </form>
-    <ul id="results"></ul>
+    <ul id="results" class="search-results"></ul>
     <script src="main.js"></script>
 </body>
 </html>

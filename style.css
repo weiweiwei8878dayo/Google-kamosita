@@ -1,0 +1,78 @@
+/* リセットCSS */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+/* ヘッダー */
+header {
+  background-color: #f8f8f8;
+  height: 64px;
+  display: flex;
+  align-items: center;
+}
+
+#logo {
+  width: 96px;
+  height: 36px;
+  background-image: url("https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 16px;
+}
+
+#search-form {
+  flex-grow: 1;
+  margin-left: 16px;
+  margin-right: 16px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 24px;
+  padding: 8px;
+}
+
+#search-input {
+  flex-grow: 1;
+  border: none;
+  outline: none;
+}
+
+#search-btn {
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.btn {
+  margin-left: 16px;
+  cursor: pointer;
+}
+
+/* メインコンテンツ */
+main {
+  padding: 16px;
+}
+
+#search-results {
+  margin-top: 16px;
+}
+
+/* フッター */
+footer {
+  background-color: #f8f8f8;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+a {
+  margin-right: 8px;
+  text-decoration: none;
+  color: #70757a;
+}
+
+a:hover {
+  text-decoration: underline;
+}

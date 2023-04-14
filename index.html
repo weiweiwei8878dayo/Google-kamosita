@@ -1,60 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Google</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f8f8;
-            margin: 0;
-        }
-        .container {
-            width: 600px;
-            margin: 150px auto;
-        }
-        .logo {
-            margin-bottom: 20px;
-        }
-        .search-box {
-            background-color: #fff;
-            border-radius: 30px;
-            padding: 10px 20px;
-            display: flex;
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .search-box input {
-            flex: 1;
-            border: none;
-            padding: 5px 10px;
-            font-size: 16px;
-            outline: none;
-        }
-        .search-box button {
-            background-color: #4285F4;
-            border: none;
-            padding: 0 20px;
-            border-radius: 30px;
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-            outline: none;
-        }
-        .footer {
-            margin-top: 50px;
-            color: #777;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Google風ページ</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="logo">
-            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google">
-        </div>
-        <div class="search-box">
-            <input type="text" placeholder="Googleで検索">
-            <button type="submit">検索</button>
-        </div>
-        <p class="footer">Googleについて</p>
+  <header>
+    <div id="logo"></div>
+    <div id="search-form">
+      <input type="text" id="search-input" placeholder="Googleで検索またはURLを入力">
+      <div id="search-btn">検索</div>
     </div>
+    <div id="btns">
+      <div class="btn">Gmail</div>
+      <div class="btn">画像</div>
+      <div class="btn">アプリ</div>
+      <div class="btn">設定</div>
+    </div>
+  </header>
+  <main>
+    <div id="search-results">
+      <!-- 検索結果はここに表示されます -->
+    </div>
+  </main>
+  <footer>
+    <div id="footer-left">
+      <a href="#">広告</a>
+      <a href="#">ビジネス</a>
+      <a href="#">Googleについて</a>
+    </div>
+    <div id="footer-right">
+      <a href="#">プライバシー</a>
+      <a href="#">利用規約</a>
+      <a href="#">設定</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
 </body>
 </html>

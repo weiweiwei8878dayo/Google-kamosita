@@ -5,36 +5,98 @@
   <style>
     /* CSS */
     body {
-      background-image: url('background-image.jpg'); /* 初期の背景画像のファイルパスを指定 */
-      background-size: cover;
-      background-repeat: no-repeat;
+      background-color: #f2f2f2;
       text-align: center;
       font-family: Arial, sans-serif;
     }
-    /* 以下略 */
+    h1 {
+      margin-top: 100px;
+    }
+    .logo {
+      margin-top: 50px;
+    }
+    .search-container {
+      margin-top: 50px;
+    }
+    #search-input {
+      padding: 10px;
+      width: 400px;
+      font-size: 18px;
+    }
+    #search-button {
+      padding: 10px;
+      font-size: 18px;
+    }
+    #results-container {
+      margin-top: 50px;
+      text-align: left;
+    }
+    .result {
+      margin-bottom: 10px;
+    }
+    .result-title {
+      font-weight: bold;
+    }
+    .result-url {
+      color: #1a0dab;
+    }
+    .result-snippet {
+      margin-top: 5px;
+      color: #545454;
+    }
   </style>
   <script>
     // JavaScript
-    function changeBackground() {
-      const imageUrl = prompt('Enter image URL for background'); // ユーザーに画像のURLを入力してもらう
-      if (imageUrl) {
-        document.body.style.backgroundImage = `url(${imageUrl})`; // 入力されたURLを背景画像に設定する
-      }
+    function searchWithChatGPT() {
+      const query = document.getElementById('search-input').value;
+      const apiUrl = 'https://api.openai.com/v1/engines/davinci/search';
+      const apiKey = 'YOUR_API_KEY'; // Your OpenAI API Key
+      const headers = {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`
+      };
+      const data = JSON.stringify({
+        'documents': ['ChatGPT is great!', 'ChatGPT is amazing!', 'ChatGPT is awesome!'],
+        'query': query,
+        'max_tokens': 100
+      });
+
+      fetch(apiUrl, { method: 'POST', headers, body: data })
+        .then(response => response.json())
+        .then(results => displayResults(results));
     }
 
-    function search() {
-      // 検索処理を実装する
-      const searchQuery = document.getElementById('search-query').value;
-      // ここに検索処理を実装する
-      alert(`検索クエリ: ${searchQuery}`);
+    function displayResults(results) {
+      const resultsContainer = document.getElementById('results-container');
+      resultsContainer.innerHTML = '';
+
+      results.data.forEach(result => {
+        const title = result.document.text;
+        const url = result.document.url;
+        const snippet = result.document.snippet;
+
+        const resultElement = document.createElement('div');
+        resultElement.className = 'result';
+        resultElement.innerHTML = `
+          <a class="result-title" href="${url}" target="_blank">${title}</a>
+          <div class="result-url">${url}</div>
+          <div class="result-snippet">${snippet}</div>
+        `;
+
+        resultsContainer.appendChild(resultElement);
+      });
     }
   </script>
 </head>
 <body>
   <h1>ChatGPT-Like Search</h1>
-  <input type="text" id="search-query" placeholder="検索キーワードを入力してください">
-  <button onclick="search()">Search</button>
-  <!-- 検索結果の表示などのコンテンツをここに追加 -->
-  <button onclick="changeBackground()">Change Background</button> <!-- 背景を変更するボタンを追加 -->
+  <div class="logo">
+    <img src="chatgpt-logo.png" alt="ChatGPT Logo">
+  </div>
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button id="search-button" onclick="searchWithChatGPT()">Search</button>
+  </div>
+  <div id="results-container"></div>
 </body>
 </html>

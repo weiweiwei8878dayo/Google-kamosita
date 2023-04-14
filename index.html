@@ -44,14 +44,6 @@
       margin-top: 5px;
       color: #545454;
     }
-    /* 追加: 背景を変えるボタンのスタイル */
-    #change-bg-button {
-      padding: 10px;
-      font-size: 18px;
-      background-color: #1a0dab;
-      color: #fff;
-      margin-top: 20px;
-    }
   </style>
   <script>
     // JavaScript
@@ -94,7 +86,17 @@
         resultsContainer.appendChild(resultElement);
       });
     }
-
-    // 追加: 背景を変えるボタンのクリックイベントハンドラ
-    function changeBackgroundColor() {
-      const body =
+  </script>
+</head>
+<body>
+  <h1>ChatGPT-Like Search</h1>
+  <div class="logo">
+    <img src="chatgpt-logo.png" alt="ChatGPT Logo">
+  </div>
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="Search...">
+    <button id="search-button" onclick="searchWithChatGPT()">Search</button>
+  </div>
+  <div id="results-container"></div>
+</body>
+</html>

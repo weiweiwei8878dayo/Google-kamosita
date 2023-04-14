@@ -64,7 +64,6 @@
         </div>
         <form action="https://www.google.com/search" method="get">
             <input type="text" name="q" class="search-input" autofocus>
-            <!-- 修正点: 検索ボタンを単なるボタンに変更 -->
             <button type="button" class="search-button" onclick="searchGoogle()">Google 検索</button>
         </form>
     </div>
@@ -72,4 +71,8 @@
         <p>Googleは米国などで登録された商標です。</p>
     </div>
     <script>
-        // 修正
+        // 検索ボタンクリック時の処理を定義
+        function searchGoogle() {
+            var searchInput = document.querySelector('.search-input');
+            var query = searchInput.value.trim();
+            if (query !==

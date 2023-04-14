@@ -1,36 +1,74 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Search Engine</title>
+  <title>Google-Like Search</title>
+  <style>
+    /* CSS スタイル */
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 0 auto;
+      max-width: 600px;
+      padding: 20px;
+    }
+    #search-input {
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+    }
+    #search-results {
+      margin-top: 20px;
+    }
+    .search-result {
+      margin-bottom: 10px;
+    }
+    .search-result a {
+      color: #1a0dab;
+      text-decoration: none;
+    }
+    .search-result a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-    <h1>Welcome to My Search Engine</h1>
-    <form onsubmit="return search()">
-        <input type="text" id="query" placeholder="Enter your search query">
-        <button type="submit">Search</button>
-    </form>
-    <ul id="results"></ul>
+  <div class="container">
+    <h1>Google-Like Search</h1>
+    <input type="text" id="search-input" placeholder="Search...">
+    <div id="search-results"></div>
+  </div>
+  
+  <script>
+    // JavaScript
+    const searchInput = document.getElementById('search-input');
+    const searchResults = document.getElementById('search-results');
 
-    <script>
-        function search() {
-            var query = document.getElementById('query').value;
-            var results = document.getElementById('results');
-            results.innerHTML = '';
+    // ダミーデータ
+    const data = [
+      { title: 'Google', url: 'https://www.google.com/' },
+      { title: 'GitHub', url: 'https://github.com/' },
+      { title: 'OpenAI', url: 'https://www.openai.com/' },
+      { title: 'Wikipedia', url: 'https://www.wikipedia.org/' },
+      { title: 'Stack Overflow', url: 'https://stackoverflow.com/' }
+    ];
 
-            // Perform search logic here, e.g., fetch data from an API or search through pre-defined data
-
-            // Example of adding search results to the results list
-            var result1 = document.createElement('li');
-            result1.textContent = 'Search result 1';
-            results.appendChild(result1);
-
-            var result2 = document.createElement('li');
-            result2.textContent = 'Search result 2';
-            results.appendChild(result2);
-
-            // Return false to prevent form submission
-            return false;
+    // 検索処理
+    searchInput.addEventListener('input', function(event) {
+      const query = event.target.value.toLowerCase();
+      const searchResultsHTML = data.reduce(function(acc, item) {
+        if (item.title.toLowerCase().includes(query)) {
+          return acc + `
+            <div class="search-result">
+              <a href="${item.url}" target="_blank">${item.title}</a>
+            </div>
+          `;
+        } else {
+          return acc;
         }
-    </script>
+      }, '');
+      searchResults.innerHTML = searchResultsHTML;
+    });
+  </script>
 </body>
 </html>

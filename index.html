@@ -1,61 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Google</title>
+  <title>Google風検索</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <h1>Google</h1>
-    <nav>
-      <ul>
-        <li><a href="#search">検索</a></li>
-        <li><a href="#images">画像</a></li>
-        <li><a href="#maps">地図</a></li>
-        <li><a href="#news">ニュース</a></li>
-        <li><a href="#gmail">Gmail</a></li>
-        <li><a href="#more">もっと見る</a></li>
-        <li><a href="#settings">設定</a></li>
-        <li><a href="#signIn">ログイン</a></li>
-      </ul>
-    </nav>
+    <h1>Google風検索</h1>
   </header>
   <main>
-    <section id="search">
-      <h2>検索</h2>
-      <!-- 検索フォームを表示する -->
-    </section>
-    <section id="images">
-      <h2>画像</h2>
-      <!-- 画像検索フォームを表示する -->
-    </section>
-    <section id="maps">
-      <h2>地図</h2>
-      <!-- 地図検索フォームを表示する -->
-    </section>
-    <section id="news">
-      <h2>ニュース</h2>
-      <!-- ニュース検索フォームを表示する -->
-    </section>
-    <section id="gmail">
-      <h2>Gmail</h2>
-      <!-- Gmailのログインフォームを表示する -->
-    </section>
-    <section id="more">
-      <h2>もっと見る</h2>
-      <!-- もっと見るメニューを表示する -->
-    </section>
-    <section id="settings">
-      <h2>設定</h2>
-      <!-- 設定メニューを表示する -->
-    </section>
-    <section id="signIn">
-      <h2>ログイン</h2>
-      <!-- ログインフォームを表示する -->
+    <section>
+      <form id="search-form" action="https://www.google.com/search" method="GET">
+        <input type="text" name="q" id="search-input" placeholder="検索キーワードを入力してください">
+        <input type="submit" value="検索">
+      </form>
     </section>
   </main>
-  <footer>
-    <p>&copy; 2023 Google</p>
-  </footer>
 </body>
 </html>

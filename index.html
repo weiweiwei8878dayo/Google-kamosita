@@ -1,20 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Google風検索</title>
-  <link rel="stylesheet" href="styles.css">
+    <title>Google</title>
+    <style>
+        /* Googleのロゴのスタイル */
+        .logo {
+            width: 272px;
+            height: 92px;
+            background-image: url('https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 100px auto;
+        }
+
+        /* 検索ボックスのスタイル */
+        .search-box {
+            width: 600px;
+            height: 40px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        .search-box input[type="text"] {
+            width: 100%;
+            height: 100%;
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-box input[type="submit"] {
+            width: 60px;
+            height: 100%;
+            background-color: #4285F4;
+            color: #fff;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .search-box input[type="submit"]:hover {
+            background-color: #3367D6;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>Google風検索</h1>
-  </header>
-  <main>
-    <section>
-      <form id="search-form" action="https://www.google.com/search" method="GET">
-        <input type="text" name="q" id="search-input" placeholder="検索キーワードを入力してください">
-        <input type="submit" value="検索">
-      </form>
-    </section>
-  </main>
+    <div class="logo"></div>
+    <div class="search-box">
+        <form action="https://www.google.com/search" method="GET">
+            <input type="text" name="q" placeholder="Googleで検索">
+            <input type="submit" value="検索">
+        </form>
+    </div>
 </body>
 </html>

@@ -2,8 +2,16 @@
 <html>
 <head>
     <title>検索サイト</title>
+    <style>
+        /* Googleロゴのスタイル */
+        .google-logo {
+            max-width: 200px;
+        }
+    </style>
 </head>
 <body>
+    <!-- Googleロゴの表示 -->
+    <img class="google-logo" src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Googleのロゴ">
     <h1>検索サイト</h1>
     <form id="search-form" onsubmit="search(); return false;">
         <input type="text" id="query" placeholder="キーワードを入力してください">

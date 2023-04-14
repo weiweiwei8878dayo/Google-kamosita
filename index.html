@@ -1,53 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Google ChatGPT</title>
+  <title>ChatGPT-Like Search</title>
   <style>
     /* CSS */
     body {
-      background-color: #f2f2f2;
+      background-image: url('background-image.jpg'); /* 初期の背景画像のファイルパスを指定 */
+      background-size: cover;
+      background-repeat: no-repeat;
       text-align: center;
       font-family: Arial, sans-serif;
     }
-    h1 {
-      margin-top: 100px;
-    }
-    .google-logo {
-      margin-top: 50px;
-    }
-    .google-logo img {
-      max-width: 200px;
-    }
-    .search-container {
-      margin-top: 50px;
-    }
-    #search-input {
-      padding: 10px;
-      width: 400px;
-      font-size: 18px;
-    }
-    #search-button {
-      padding: 10px;
-      font-size: 18px;
-    }
+    /* 以下略 */
   </style>
   <script>
     // JavaScript
-    function redirectToGoogle() {
-      const query = document.getElementById('search-input').value;
-      const googleSearchUrl = `https://www.google.com/search?q=${query}`;
-      window.location.href = googleSearchUrl;
+    function changeBackground() {
+      const imageUrl = prompt('Enter image URL for background'); // ユーザーに画像のURLを入力してもらう
+      if (imageUrl) {
+        document.body.style.backgroundImage = `url(${imageUrl})`; // 入力されたURLを背景画像に設定する
+      }
     }
   </script>
 </head>
 <body>
-  <h1>Google-Like Search</h1>
-  <div class="google-logo">
-    <img src="google-logo.png" alt="Google Logo">
-  </div>
-  <div class="search-container">
-    <input type="text" id="search-input" placeholder="Search...">
-    <button id="search-button" onclick="redirectToGoogle()">Search</button>
-  </div>
+  <h1>ChatGPT-Like Search</h1>
+  <!-- 以下略 -->
+  <button onclick="changeBackground()">Change Background</button> <!-- 背景を変更するボタンを追加 -->
 </body>
 </html>
